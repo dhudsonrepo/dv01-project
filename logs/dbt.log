@@ -1,0 +1,186 @@
+[0m20:25:32.470191 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1081f7e50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109533100>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109533cd0>]}
+
+
+============================== 20:25:32.483948 | c34411c0-fb57-45f6-996d-8dbc7d930874 ==============================
+[0m20:25:32.483948 [info ] [MainThread]: Running with dbt=1.9.4
+[0m20:25:32.485070 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/nova/.dbt', 'version_check': 'True', 'warn_error': 'None', 'log_path': 'logs', 'fail_fast': 'False', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'invocation_command': 'dbt init dbt', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m20:25:32.512914 [warn ] [MainThread]: [ConfigFolderDirectory]: Unable to parse logging event dictionary. Failed to parse dir field: expected string or bytes-like object.. Dictionary: {'dir': PosixPath('/Users/nova/.dbt')}
+[0m20:25:32.513682 [info ] [MainThread]: Creating dbt configuration folder at 
+[0m20:26:53.714820 [debug] [MainThread]: Starter project path: /Users/nova/Documents/GitHub/dv01-project/venv/lib/python3.9/site-packages/dbt/include/starter_project
+[0m20:26:53.731582 [info ] [MainThread]: 
+Your new dbt project "dv01" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m20:26:53.732230 [info ] [MainThread]: Setting up your profile.
+[0m20:27:50.895082 [error] [MainThread]: Encountered an error:
+
+[0m20:27:51.086640 [error] [MainThread]: Traceback (most recent call last):
+  File "/Users/nova/Documents/GitHub/dv01-project/venv/lib/python3.9/site-packages/dbt/cli/requires.py", line 153, in wrapper
+    result, success = func(*args, **kwargs)
+  File "/Users/nova/Documents/GitHub/dv01-project/venv/lib/python3.9/site-packages/dbt/cli/requires.py", line 103, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/nova/Documents/GitHub/dv01-project/venv/lib/python3.9/site-packages/dbt/cli/main.py", line 477, in init
+    results = task.run()
+  File "/Users/nova/Documents/GitHub/dv01-project/venv/lib/python3.9/site-packages/dbt/task/init.py", line 346, in run
+    self.setup_profile(profile_name)
+  File "/Users/nova/Documents/GitHub/dv01-project/venv/lib/python3.9/site-packages/dbt/task/init.py", line 262, in setup_profile
+    self.create_profile_from_target(adapter, profile_name=profile_name)
+  File "/Users/nova/Documents/GitHub/dv01-project/venv/lib/python3.9/site-packages/dbt/task/init.py", line 172, in create_profile_from_target
+    load_plugin(adapter)
+  File "/Users/nova/Documents/GitHub/dv01-project/venv/lib/python3.9/site-packages/dbt/adapters/factory.py", line 239, in load_plugin
+    return FACTORY.load_plugin(name)
+  File "/Users/nova/Documents/GitHub/dv01-project/venv/lib/python3.9/site-packages/dbt/adapters/factory.py", line 68, in load_plugin
+    mod: Any = import_module("." + name, "dbt.adapters")
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/Users/nova/Documents/GitHub/dv01-project/venv/lib/python3.9/site-packages/dbt/adapters/bigquery/__init__.py", line 1, in <module>
+    from dbt.adapters.bigquery.column import BigQueryColumn
+  File "/Users/nova/Documents/GitHub/dv01-project/venv/lib/python3.9/site-packages/dbt/adapters/bigquery/column.py", line 4, in <module>
+    from google.cloud.bigquery import SchemaField
+  File "/Users/nova/Documents/GitHub/dv01-project/venv/lib/python3.9/site-packages/google/cloud/bigquery/__init__.py", line 36, in <module>
+    from google.cloud.bigquery.client import Client
+  File "/Users/nova/Documents/GitHub/dv01-project/venv/lib/python3.9/site-packages/google/cloud/bigquery/client.py", line 72, in <module>
+    from google.cloud.bigquery import _job_helpers
+  File "/Users/nova/Documents/GitHub/dv01-project/venv/lib/python3.9/site-packages/google/cloud/bigquery/_job_helpers.py", line 47, in <module>
+    from google.cloud.bigquery import job
+  File "/Users/nova/Documents/GitHub/dv01-project/venv/lib/python3.9/site-packages/google/cloud/bigquery/job/__init__.py", line 27, in <module>
+    from google.cloud.bigquery.job.copy_ import CopyJob
+  File "/Users/nova/Documents/GitHub/dv01-project/venv/lib/python3.9/site-packages/google/cloud/bigquery/job/copy_.py", line 22, in <module>
+    from google.cloud.bigquery.table import TableReference
+  File "/Users/nova/Documents/GitHub/dv01-project/venv/lib/python3.9/site-packages/google/cloud/bigquery/table.py", line 29, in <module>
+    import pandas  # type: ignore
+  File "/Users/nova/Documents/GitHub/dv01-project/venv/lib/python3.9/site-packages/pandas/__init__.py", line 49, in <module>
+    from pandas.core.api import (
+  File "/Users/nova/Documents/GitHub/dv01-project/venv/lib/python3.9/site-packages/pandas/core/api.py", line 47, in <module>
+    from pandas.core.groupby import (
+  File "/Users/nova/Documents/GitHub/dv01-project/venv/lib/python3.9/site-packages/pandas/core/groupby/__init__.py", line 1, in <module>
+    from pandas.core.groupby.generic import (
+  File "/Users/nova/Documents/GitHub/dv01-project/venv/lib/python3.9/site-packages/pandas/core/groupby/generic.py", line 68, in <module>
+    from pandas.core.frame import DataFrame
+  File "/Users/nova/Documents/GitHub/dv01-project/venv/lib/python3.9/site-packages/pandas/core/frame.py", line 149, in <module>
+    from pandas.core.generic import (
+  File "/Users/nova/Documents/GitHub/dv01-project/venv/lib/python3.9/site-packages/pandas/core/generic.py", line 152, in <module>
+    from pandas.core import (
+  File "/Users/nova/Documents/GitHub/dv01-project/venv/lib/python3.9/site-packages/pandas/core/indexing.py", line 79, in <module>
+    from pandas.core.indexes.api import (
+  File "/Users/nova/Documents/GitHub/dv01-project/venv/lib/python3.9/site-packages/pandas/core/indexes/api.py", line 20, in <module>
+    from pandas.core.indexes.base import (
+  File "/Users/nova/Documents/GitHub/dv01-project/venv/lib/python3.9/site-packages/pandas/core/indexes/base.py", line 29, in <module>
+    from pandas._libs import (
+  File "<frozen importlib._bootstrap>", line 398, in parent
+KeyboardInterrupt
+
+[0m20:27:51.125957 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": false, "command_wall_clock_time": 138.78664, "process_in_blocks": "0", "process_kernel_time": 0.761455, "process_mem_max_rss": "134692864", "process_out_blocks": "0", "process_user_time": 3.196583}
+[0m20:27:51.127420 [debug] [MainThread]: Command `dbt init` failed at 20:27:51.127048 after 138.79 seconds
+[0m20:27:51.128396 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1081f7e50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109503d00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109addfa0>]}
+[0m20:27:51.129171 [debug] [MainThread]: Flushing usage events
+[0m20:27:51.662085 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m20:28:13.987940 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1033cbdf0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104705f10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104705be0>]}
+
+
+============================== 20:28:13.996031 | 67c2af2c-2562-4037-816d-aaf1b5b2e367 ==============================
+[0m20:28:13.996031 [info ] [MainThread]: Running with dbt=1.9.4
+[0m20:28:13.996969 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'version_check': 'True', 'log_path': 'logs', 'fail_fast': 'False', 'profiles_dir': '/Users/nova/.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'log_format': 'default', 'introspect': 'True', 'target_path': 'None', 'invocation_command': 'dbt init dv01_bigquery', 'send_anonymous_usage_stats': 'True'}
+[0m20:28:14.018866 [debug] [MainThread]: Starter project path: /Users/nova/Documents/GitHub/dv01-project/venv/lib/python3.9/site-packages/dbt/include/starter_project
+[0m20:28:14.032545 [info ] [MainThread]: 
+Your new dbt project "dv01_bigquery" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m20:28:14.033171 [info ] [MainThread]: Setting up your profile.
+[0m20:56:41.335836 [info ] [MainThread]: Profile dv01_bigquery written to /Users/nova/.dbt/profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m20:56:41.586324 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 1707.679, "process_in_blocks": "0", "process_kernel_time": 0.791188, "process_mem_max_rss": "165990400", "process_out_blocks": "0", "process_user_time": 3.517911}
+[0m20:56:41.597336 [debug] [MainThread]: Command `dbt init` succeeded at 20:56:41.593872 after 1707.70 seconds
+[0m20:56:41.613951 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1033cbdf0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104758eb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1046c0a60>]}
+[0m20:56:41.625523 [debug] [MainThread]: Flushing usage events
+[0m20:56:42.263679 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m20:57:08.293605 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104ad3ee0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105e0e100>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105e0ed90>]}
+
+
+============================== 20:57:08.309732 | cb6e92ba-ef83-48e6-8330-e6d7156610b5 ==============================
+[0m20:57:08.309732 [info ] [MainThread]: Running with dbt=1.9.4
+[0m20:57:08.311251 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'profiles_dir': '/Users/nova/.dbt', 'log_path': 'logs', 'debug': 'False', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'introspect': 'True', 'invocation_command': 'dbt debug', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m20:57:08.350018 [info ] [MainThread]: dbt version: 1.9.4
+[0m20:57:08.354451 [info ] [MainThread]: python version: 3.9.6
+[0m20:57:08.355270 [info ] [MainThread]: python path: /Users/nova/Documents/GitHub/dv01-project/venv/bin/python3
+[0m20:57:08.356061 [info ] [MainThread]: os info: macOS-13.7.4-x86_64-i386-64bit
+[0m20:57:11.133844 [info ] [MainThread]: Using profiles dir at /Users/nova/.dbt
+[0m20:57:11.134861 [info ] [MainThread]: Using profiles.yml file at /Users/nova/.dbt/profiles.yml
+[0m20:57:11.135904 [info ] [MainThread]: Using dbt_project.yml file at /Users/nova/Documents/GitHub/dv01-project/dbt_project.yml
+[0m20:57:11.138611 [info ] [MainThread]: adapter type: bigquery
+[0m20:57:11.139612 [info ] [MainThread]: adapter version: 1.9.1
+[0m20:57:11.140782 [info ] [MainThread]: Configuration:
+[0m20:57:11.141458 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m20:57:11.142431 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m20:57:11.143323 [info ] [MainThread]: Required dependencies:
+[0m20:57:11.144379 [debug] [MainThread]: Executing "git --help"
+[0m20:57:11.188975 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m20:57:11.191328 [debug] [MainThread]: STDERR: "b''"
+[0m20:57:11.192381 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m20:57:11.193397 [info ] [MainThread]: Connection:
+[0m20:57:11.194799 [info ] [MainThread]:   method: service-account
+[0m20:57:11.195932 [info ] [MainThread]:   database: dv01-project
+[0m20:57:11.196893 [info ] [MainThread]:   execution_project: dv01-project
+[0m20:57:11.197761 [info ] [MainThread]:   schema: dbt_bigquery
+[0m20:57:11.198849 [info ] [MainThread]:   location: US
+[0m20:57:11.199639 [info ] [MainThread]:   priority: interactive
+[0m20:57:11.200239 [info ] [MainThread]:   maximum_bytes_billed: None
+[0m20:57:11.200845 [info ] [MainThread]:   impersonate_service_account: None
+[0m20:57:11.201408 [info ] [MainThread]:   job_retry_deadline_seconds: None
+[0m20:57:11.203918 [info ] [MainThread]:   job_retries: 1
+[0m20:57:11.206344 [info ] [MainThread]:   job_creation_timeout_seconds: None
+[0m20:57:11.207001 [info ] [MainThread]:   job_execution_timeout_seconds: 300
+[0m20:57:11.207637 [info ] [MainThread]:   timeout_seconds: 300
+[0m20:57:11.208187 [info ] [MainThread]:   client_id: None
+[0m20:57:11.208719 [info ] [MainThread]:   token_uri: None
+[0m20:57:11.209340 [info ] [MainThread]:   dataproc_region: None
+[0m20:57:11.209836 [info ] [MainThread]:   dataproc_cluster_name: None
+[0m20:57:11.210304 [info ] [MainThread]:   gcs_bucket: None
+[0m20:57:11.210934 [info ] [MainThread]:   dataproc_batch: None
+[0m20:57:11.213471 [info ] [MainThread]: Registered adapter: bigquery=1.9.1
+[0m20:57:11.908212 [debug] [MainThread]: Acquiring new bigquery connection 'debug'
+[0m20:57:11.909441 [debug] [MainThread]: On debug: select 1 as id
+[0m20:57:11.910358 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m20:57:13.514562 [debug] [MainThread]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=dv01-project&j=bq:US:4d36f9a4-b5a1-4bca-9290-eda25bf23b29&page=queryresults
+[0m20:57:14.127781 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m20:57:14.129036 [info ] [MainThread]: [31m1 check failed:[0m
+[0m20:57:14.130066 [info ] [MainThread]: Project loading failed for the following reason:
+ project path </Users/nova/Documents/GitHub/dv01-project/dbt_project.yml> not found
+
+[0m20:57:14.140165 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 6.118643, "process_in_blocks": "0", "process_kernel_time": 1.238539, "process_mem_max_rss": "174710784", "process_out_blocks": "0", "process_user_time": 5.115252}
+[0m20:57:14.141265 [debug] [MainThread]: Command `dbt debug` failed at 20:57:14.141020 after 6.12 seconds
+[0m20:57:14.142019 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m20:57:14.142765 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104ad3ee0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x115739130>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x103abb640>]}
+[0m20:57:14.143712 [debug] [MainThread]: Flushing usage events
+[0m20:57:14.315680 [debug] [MainThread]: An error was encountered while trying to flush usage events
