@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: raw
+    database: dv01-project
+    schema: dbt_bigquery
+    tables:
+      - name: kiva_loans
+      - name: lending_club
