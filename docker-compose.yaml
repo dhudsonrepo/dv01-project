@@ -56,6 +56,7 @@ x-airflow-common:
     AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'true'
     AIRFLOW__CORE__LOAD_EXAMPLES: 'true'
     GOOGLE_APPLICATION_CREDENTIALS: ${GOOGLE_APPLICATION_CREDENTIALS}
+    GCS_BUCKET_NAME: dv01-loan-data
     AIRFLOW__API__AUTH_BACKEND: 'airflow.api.auth.backend.basic_auth'
     _PIP_ADDITIONAL_REQUIREMENTS: ${_PIP_ADDITIONAL_REQUIREMENTS:-}
   volumes:
@@ -63,6 +64,8 @@ x-airflow-common:
     - ./logs:/opt/airflow/logs
     - ./plugins:/opt/airflow/plugins
     - /Users/nova/Documents/dv01-service-key/dv01-project.json:/opt/airflow/dv01-project.json
+    - ./dv01_bigquery_dbt:/opt/airflow/dv01_bigquery_dbt
+    - ./airflow/profiles:/opt/airflow/profiles
   user: "${AIRFLOW_UID:-50000}:${AIRFLOW_GID:-50000}"
   depends_on:
     redis:

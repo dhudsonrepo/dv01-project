@@ -3,3 +3,5 @@ kagglehub
 python-dotenv
 google-cloud-storage
 pandas
+dbt-core
+dbt-bigquery

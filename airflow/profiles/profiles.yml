@@ -1,0 +1,14 @@
+dv01_bigquery:
+  outputs:
+    dev:
+      dataset: dbt_bigquery
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      keyfile: /opt/airflow/dv01-project.json
+      location: US
+      method: service-account
+      priority: interactive
+      project: dv01-project
+      threads: 4
+      type: bigquery
+  target: dev
